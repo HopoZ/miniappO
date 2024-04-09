@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <view class="userinfo">
+        <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+          <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+        </button>
+        <view class="nickname-wrapper">
+          <text class="nickname-label">车牌号</text>
+          <input type="nickname" class="input" placeholder="请输入车牌号" bind:change="onPlateNumberChange" />
+        </view>
+        <view class="nickname-wrapper">
+          <text class="nickname-label">密码</text>
+          <input type="nickname" class="input" placeholder="请输入密码" bind:change="onPasswordChange" />
+        </view>
+        <van-button bind:tap="onAuthenticate" type="primary">登录</van-button>
+        
+        <van-button bind:tap="Auth" type="info" size="mini">注册</van-button>
+
+    </view>
+  </view>
+</scroll-view>

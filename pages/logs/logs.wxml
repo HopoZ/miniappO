@@ -1,0 +1,46 @@
+<!-- logs.wxml -->
+<view class="container">
+  <!-- <button bind:tap="getDetailedData">获取</button> -->
+  <h1>{{ carData.carNumber}}车辆详细信息</h1>
+
+  <!-- 酒驾概率 -->
+    <h2>酒驾概率</h2>
+  <view class="circle-container">
+    <van-circle value="{{carData.drunkDrivingPro}}" color="{{ gradientColor }}" text="{{carData.drunkDrivingPro}}%" />
+  </view>
+
+  <!-- 酒精浓度比 -->
+    <h2>酒精浓度比</h2>
+  <view class="circle-container">
+    <van-circle value="{{carData.alcoholConc}}" color="{{ gradientColor }}" text="{{carData.alcoholConc}}%" />
+  </view>
+</view>
+
+<!-- 车辆详细信息 -->
+<view class="car-detail-table">
+  <view class="row">
+    <view class="cell-header">信息项</view>
+    <view class="cell-header">值</view>
+  </view>
+  <view class="row">
+    <view class="cell">是否疲劳</view>
+    <view class="cell">{{ carData.isTired }}</view>
+  </view>
+  <view class="row">
+    <view class="cell">是否酒驾</view>
+    <view class="cell">{{ carData.isDrunk }}</view>
+  </view>
+  <view class="row">
+    <view class="cell">温度</view>
+    <view class="cell">{{ carData.temperature }}</view>
+  </view>
+  <view class="row">
+    <view class="cell">纬度</view>
+    <view class="cell">{{ carData.latitude }}</view>
+  </view>
+  <view class="row">
+    <view class="cell">经度</view>
+    <view class="cell">{{ carData.longitude }}</view>
+  </view>
+</view>
+
