@@ -15,7 +15,7 @@
         </view>
         <van-button bind:tap="onAuthenticate" type="primary">登录</van-button>
         
-        <van-button bind:tap="Auth" type="info" size="mini">注册</van-button>
+        <van-button bind:tap="onRegister" type="info" size="mini">注册</van-button>
 
     </view>
   </view>

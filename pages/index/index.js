@@ -26,32 +26,94 @@ Page({
     const plateNumber = this.data.plateNumber;
     const password = this.data.password;
     wx.request({
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
       url: 'http://localhost/user/register',
+=======
+      url: 'http://localhost:8078/user/login',
+>>>>>>> Stashed changes
+=======
+      url: 'http://localhost:8078/user/login',
+>>>>>>> Stashed changes
       method: 'POST',
       data: {
         carNumber: plateNumber,
         password: password
       },
       success: function (res) {
-        console.log(res.data);
-        // Handle success response
+        console.log("登陆后返回",res.data);
+        if(res.data.state==true){
         wx.showToast({
-          title: '注册成功',
+          title: '登录成功',
           icon: 'success',
           duration: 2000
         });
-        // Redirect to another page or perform any other action
+        wx.navigateTo({
+          url: '/pages/logs/logs',
+        })
+        }else{
+          wx.showToast({
+            title: '失败，请重试',
+            icon: 'none',
+            duration: 2000
+          });
+        }
       },
       fail: function (error) {
         console.error(error);
         // Handle error
         wx.showToast({
-          title: '注册失败，请重试',
+          title: '失败，请重试',
           icon: 'none',
           duration: 2000
         });
       }
     });
+  },  
+  onRegister: function () {
+    const plateNumber = this.data.plateNumber;
+    const password = this.data.password;
+    wx.request({
+      url: 'http://localhost:8078/user/register',
+      method: 'POST',
+      data: {
+        carNumber: plateNumber,
+        password: password
+      },
+      success: function (res) {
+        console.log("注册后返回",res.data);
+        if(res.data.state==true){
+        wx.showToast({
+          title: '注册成功',
+          icon: 'success',
+          duration: 2000
+        });
+        wx.navigateTo({
+          url: '/pages/index/index',
+        })
+        }else{
+          wx.showToast({
+            title: '失败，该车已注册',
+            icon: 'none',
+            duration: 2000
+          });
+        }
+      },
+      fail: function (error) {
+        console.error(error);
+        // Handle error
+        wx.showToast({
+          title: '失败，请重试',
+          icon: 'none',
+          duration: 2000
+        });
+      }
+    });
+  },
+  Jump:function(){
+    wx.navigateTo({
+      url: '/pages/logs/logs',
+    })
   }
 
 })

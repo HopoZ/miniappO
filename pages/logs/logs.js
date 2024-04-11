@@ -12,7 +12,7 @@ Page({
   },
   getDetailedData(){
     wx.request({
-      url: 'http://172.20.58.167:8078/web/getDetailedData',
+      url: 'http://localhost:8078/web/getDetailedData',
       method:'GET',
       data:{
         carNumber:'MNO345'
