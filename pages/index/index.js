@@ -26,15 +26,10 @@ Page({
     const plateNumber = this.data.plateNumber;
     const password = this.data.password;
     wx.request({
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       url: 'http://localhost/user/register',
-=======
       url: 'http://localhost:8078/user/login',
->>>>>>> Stashed changes
-=======
       url: 'http://localhost:8078/user/login',
->>>>>>> Stashed changes
+      url: 'http://localhost:8078/user/login',
       method: 'POST',
       data: {
         carNumber: plateNumber,
