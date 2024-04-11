@@ -26,7 +26,7 @@ Page({
     const plateNumber = this.data.plateNumber;
     const password = this.data.password;
     wx.request({
-      url: 'http://172.20.58.167/user/register',
+      url: 'http://localhost/user/register',
       method: 'POST',
       data: {
         carNumber: plateNumber,
