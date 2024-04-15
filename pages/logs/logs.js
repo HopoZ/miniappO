@@ -11,13 +11,19 @@ Page({
     },
     carPhotoUrl: ''
   },
+  onLoad(options) {
+    // 获取上一个页面传递过来的参数
+    const  carNumber  = options.carNumber;
+    console.log('获取的车牌号',carNumber)
+    this.getDetailedData(carNumber);
+  },
   // 获取车辆详细信息
-  getDetailedData() {
+  getDetailedData(carNumber) {
     wx.request({
       url: 'http://localhost:8078/web/getDetailedData',
       method: 'GET',
       data: {
-        carNumber: 'MNO345'
+        carNumber:carNumber
       },
       success: (res) => {
         console.log("res.data: ", res.data);
@@ -90,7 +96,4 @@ Page({
       }
     });
   },
-  onLoad() {
-    this.getDetailedData();
-  }
 })

@@ -7,32 +7,29 @@ Page({
     userInfo: {
       avatarUrl: defaultAvatarUrl,
       nickName: '',
+
     },
-    hasUserInfo: false,
-    canIUseGetUserProfile: wx.canIUse('getUserProfile'),
-    canIUseNicknameComp: wx.canIUse('input.type.nickname'),
+    carNumber:'',
+    password:'',
   },
-  onPlateNumberChange: function (event) {
+  oncarNumberInput(event) {
     this.setData({
-      plateNumber: event.detail.value
+      carNumber: event.detail.value
     });
   },
-  onPasswordChange: function (event) {
+  onPasswordInput(event) {
     this.setData({
       password: event.detail.value
     });
   },
   onAuthenticate: function () {
-    const plateNumber = this.data.plateNumber;
+    const carNumber = this.data.carNumber;
     const password = this.data.password;
     wx.request({
-      url: 'http://localhost/user/register',
-      url: 'http://localhost:8078/user/login',
-      url: 'http://localhost:8078/user/login',
       url: 'http://localhost:8078/user/login',
       method: 'POST',
       data: {
-        carNumber: plateNumber,
+        carNumber: carNumber,
         password: password
       },
       success: function (res) {
@@ -44,11 +41,11 @@ Page({
           duration: 2000
         });
         wx.navigateTo({
-          url: '/pages/logs/logs',
+          url: '/pages/logs/logs?carNumber='+carNumber,
         })
         }else{
           wx.showToast({
-            title: '失败，请重试',
+            title: '失败，密码错误',
             icon: 'none',
             duration: 2000
           });
@@ -66,13 +63,13 @@ Page({
     });
   },  
   onRegister: function () {
-    const plateNumber = this.data.plateNumber;
+    const carNumber = this.data.carNumber;
     const password = this.data.password;
     wx.request({
       url: 'http://localhost:8078/user/register',
       method: 'POST',
       data: {
-        carNumber: plateNumber,
+        carNumber: carNumber,
         password: password
       },
       success: function (res) {
@@ -105,10 +102,5 @@ Page({
       }
     });
   },
-  Jump:function(){
-    wx.navigateTo({
-      url: '/pages/logs/logs',
-    })
-  }
 
 })
