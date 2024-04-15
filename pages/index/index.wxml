@@ -11,7 +11,7 @@
         </view>
         <view class="nickname-wrapper">
           <text class="nickname-label">密码</text>
-          <input type="nickname" class="input" placeholder="请输入密码" bind:change="onPasswordChange" />
+          <input type="password" class="input" placeholder="请输入密码" bind:change="onPasswordChange" />
         </view>
         <van-button bind:tap="onAuthenticate" type="primary">登录</van-button>
         

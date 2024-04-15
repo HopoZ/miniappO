@@ -1,16 +1,18 @@
 <!-- logs.wxml -->
 <view class="container">
-  <!-- <button bind:tap="getDetailedData">获取</button> -->
   <h1>{{ carData.carNumber}}车辆详细信息</h1>
-
+  <view class="image-container">
+    <!-- 动态添加的图片元素将会被放置的位置 -->
+    <image class="car-photo" src="{{ carPhotoUrl }}"></image>
+  </view>
   <!-- 酒驾概率 -->
-    <h2>酒驾概率</h2>
+  <h2>酒驾概率</h2>
   <view class="circle-container">
     <van-circle value="{{carData.drunkDrivingPro}}" color="{{ gradientColor }}" text="{{carData.drunkDrivingPro}}%" />
   </view>
 
   <!-- 酒精浓度比 -->
-    <h2>酒精浓度比</h2>
+  <h2>酒精浓度比</h2>
   <view class="circle-container">
     <van-circle value="{{carData.alcoholConc}}" color="{{ gradientColor }}" text="{{carData.alcoholConc}}%" />
   </view>
@@ -43,4 +45,3 @@
     <view class="cell">{{ carData.longitude }}</view>
   </view>
 </view>
-
