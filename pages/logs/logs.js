@@ -41,8 +41,8 @@ Page({
   },
   // 获取车辆照片
   AddPhoto() {
-    const imageKownUrl = 'http://82.156.65.122:8080/photoKnow/';
-    const imageUnknownUrl = 'http://82.156.65.122:8080/photoUnknow/';
+    const imageKownUrl = 'http://82.156.65.122:8060/photoKnow/';
+    const imageUnknownUrl = 'http://82.156.65.122:8060/photoUnknow/';
     const carNumber = this.data.carData.carNumber;
 
     // 尝试获取已知照片
