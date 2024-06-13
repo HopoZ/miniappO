@@ -20,7 +20,7 @@ Page({
   // 获取车辆详细信息
   getDetailedData(carNumber) {
     wx.request({
-      url: 'http://localhost:8078/web/getDetailedData',
+      url: 'http://82.156.65.122:8078/web/getDetailedData',
       method: 'GET',
       data: {
         carNumber:carNumber

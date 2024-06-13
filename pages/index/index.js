@@ -26,7 +26,7 @@ Page({
     const carNumber = this.data.carNumber;
     const password = this.data.password;
     wx.request({
-      url: 'http://localhost:8078/user/login',
+      url: 'http://82.156.65.122:8078/user/login',
       method: 'POST',
       data: {
         carNumber: carNumber,
@@ -66,7 +66,7 @@ Page({
     const carNumber = this.data.carNumber;
     const password = this.data.password;
     wx.request({
-      url: 'http://localhost:8078/user/register',
+      url: 'http://82.156.65.122:8078/user/register',
       method: 'POST',
       data: {
         carNumber: carNumber,
