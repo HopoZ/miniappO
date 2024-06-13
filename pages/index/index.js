@@ -55,7 +55,7 @@ Page({
         console.error(error);
         // Handle error
         wx.showToast({
-          title: '失败，请重试',
+          title: '网络失败，请重试',
           icon: 'none',
           duration: 2000
         });
